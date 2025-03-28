@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Grid</h1>
+    </header>
+    <main>
+        <section>
+            <h2>O que é CSS Grid?</h2>
+            <div class="info-box">
+                <p>CSS Grid é um sistema de layout baseado em grades que permite organizar elementos em colunas e linhas de maneira flexível.</p>
+                <p>Principais propriedades:</p>
+                <ul>
+                    <li><strong>grid-template-columns:</strong> Define as colunas da grade.</li>
+                    <li><strong>grid-template-rows:</strong> Define as linhas da grade.</li>
+                    <li><strong>gap:</strong> Controla o espaçamento entre os elementos.</li>
+                </ul>
+                <p><strong>O que são os <code>fr</code> (frações)?</strong></p>
+                <p>O <code>fr</code> é uma unidade no CSS Grid que representa uma fração do espaço disponível. Se você tem 1fr, significa que o item ocupa uma fração do espaço restante. Se você tiver <code>1fr 2fr</code>, a primeira coluna ocupará 1 parte do espaço, e a segunda coluna ocupará 2 partes, dividindo o espaço restante de maneira proporcional.</p>
+                <p><strong>Exemplo:</strong> Se você definir <code>grid-template-columns: 1fr 2fr 1fr;</code>, o espaço da grade será dividido em 4 partes iguais. A primeira e a terceira colunas ocuparão 1 parte cada, enquanto a segunda coluna ocupará 2 partes do espaço.</p>
+            </div>
+            <h2>Exemplo de CSS Grid</h2>
+            <div class="grid-container" id="gridContainer">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+            </div>
+            <label for="columns">Grid Columns:</label>
+            <input type="text" id="columns" placeholder="Ex: 1fr 2fr" />
+            <button onclick="updateGrid()">Aplicar</button>
+        </section>
+    </main>
+    <script>
+        function updateGrid() {
+            let columns = document.getElementById('columns').value;
+            if (columns.trim() !== "") {
+                document.getElementById('gridContainer').style.gridTemplateColumns = columns;
+            }
+        }
+    </script>
+</body>
+</html>
