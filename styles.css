@@ -22,7 +22,7 @@ header {
     display: block;
 }
 
-#home_icon :hover {
+#home_icon:hover {
     cursor: pointer;
 }
 
@@ -33,9 +33,11 @@ nav ul {
     padding: 10px;
     background: #334155;
 }
+
 nav ul li {
     margin: 0 15px;
 }
+
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
@@ -59,6 +61,7 @@ section {
     width: 90%;
     margin: 0 auto; /* Centraliza o conteúdo */
 }
+
 footer {
     text-align: center;
     padding: 10px;
@@ -69,12 +72,13 @@ footer {
 .flex-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: center; /* Alinha os itens ao centro */
     gap: 10px;
     background: #1e293b;
     padding: 20px;
-    justify-content: center;
+    flex-wrap: wrap;
 }
+
 .flex-item {
     background: #3b82f6;
     padding: 20px;
@@ -84,11 +88,46 @@ footer {
     min-width: 100px;
     flex: 1;
 }
-@media (max-width: 768px) {
-    .flex-container {
-        flex-direction: column;
-        align-items: center;
-    }
+
+.flex-container-justify {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Alinha os itens ao centro */
+    background: #1e293b;
+    padding: 20px;
+    gap: 10px;
+}
+
+.flex-item-justify {
+    background: #3b82f6;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    max-width: 20%;
+    flex: 1;
+}
+
+.flex-container-align {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #1e293b;
+    padding: 20px;
+    gap: 10px;
+    height: 100px;
+}
+
+
+.flex-item-align {
+    background: #3b82f6;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    max-width: 20%;
+    max-height: 20%;
+    flex: 1;
 }
 
 input[type="text"] {
@@ -140,47 +179,13 @@ input[type="text"]:focus {
     width: 95%;
     border-radius: 10px;
 }
+
 .grid-item {
     background: #3b82f6;
     padding: 20px;
     text-align: center;
     border-radius: 5px;
     color: white;
-}
-
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    background: #1e293b;
-    padding: 20px;
-    flex-wrap: wrap;
-}
-
-.flex-item {
-    background: #3b82f6;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    flex: 1;
-}
-
-.info-box {
-    background: #1e293b;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    text-align: left;
-}
-
-.info-box ul {
-    list-style: none;
-    padding-left: 20px;
-}
-
-.info-box ul li {
-    margin-bottom: 10px;
 }
 
 /* Estilo para o select */
@@ -219,8 +224,12 @@ button:hover {
     background-color: #2563eb;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     main {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .flex-item-justify {
+        max-width: 2em;
     }
 }

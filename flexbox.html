@@ -9,7 +9,7 @@
 <body>
     <header>
         <a href="home.html"><svg id="home_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg></a>
-        <h1>CSS Grid</h1>
+        <h1>CSS Flexbox</h1>
     </header>
     <main>
         <section>
@@ -19,8 +19,8 @@
                 <p>Principais propriedades:</p>
                 <ul>
                     <li><strong>flex-direction:</strong> Define a direção dos itens dentro do contêiner (linha ou coluna).</li>
-                    <li><strong>justify-content:</strong> Alinha os itens ao longo do eixo principal.</li>
-                    <li><strong>align-items:</strong> Alinha os itens ao longo do eixo transversal.</li>
+                    <li><strong>justify-content:</strong> Alinha os itens ao longo do eixo principal. (Horizontal)</li>
+                    <li><strong>align-items:</strong> Alinha os itens ao longo do eixo transversal. (Vertical)</li>
                 </ul>
             </div>
 
@@ -42,17 +42,17 @@
             <button onclick="updateFlexboxDirection()">Aplicar</button>
 
             <h2>Exemplo de CSS flex justify-content</h2>
-            <div class="flex-container" id="flexContainerJustify">
-                <div class="flex-item">Item 1</div>
-                <div class="flex-item">Item 2</div>
-                <div class="flex-item">Item 3</div>
+            <div class="flex-container-justify" id="flexContainerJustify">
+                <div class="flex-item-justify">Item 1</div>
+                <div class="flex-item-justify">Item 2</div>
+                <div class="flex-item-justify">Item 3</div>
             </div>
             
             <label for="flexJustify">Flex Justify:</label>
             <select id="flexJustify">
+                <option value="center">Centro da Flexbox (center)</option>
                 <option value="flex-start">Começo da Flexbox (flex-start)</option>
                 <option value="flex-end">Fim da Flexbox (flex-end)</option>
-                <option value="center">Centro da Flexbox (center)</option>
                 <option value="space-between">Espaço entre (space-between)</option>
                 <option value="space-around">Espaço ao redor (space-around)</option>
                 <option value="space-evenly">Espaço eventual (space-evenly)</option>
@@ -60,6 +60,27 @@
 
             <button onclick="updateFlexboxJustify()">Aplicar</button>
         </section>
+
+        <!-- Novo exemplo para align-items -->
+        <section>
+            <h2>Exemplo de CSS align-items</h2>
+            <div class="flex-container-align" id="flexContainerAlign">
+                <div class="flex-item-align">Item 1</div>
+                <div class="flex-item-align">Item 2</div>
+                <div class="flex-item-align">Item 3</div>
+            </div>
+
+            <label for="alignItems">Escolha o alinhamento:</label>
+            <select id="alignItems">
+                <option value="flex-start">Início (flex-start)</option>
+                <option value="flex-end">Fim (flex-end)</option>
+                <option value="center">Centro (center)</option>
+                <option value="baseline">Baseline</option>
+            </select>
+
+            <button onclick="updateAlignItems()">Aplicar</button>
+        </section>
+
     </main>
 
     <script>
@@ -74,9 +95,16 @@
             if (flexJustify.trim() !== "") {
                 flexContainerJustify.style.justifyContent = flexJustify;
             }
-            console.log(flexJustify);
         }
 
+        function updateAlignItems() {
+            let alignItems = document.getElementById('alignItems').value;
+            let flexContainerAlign = document.getElementById('flexContainerAlign');
+            if (alignItems.trim() !== "") {
+                flexContainerAlign.style.alignItems = alignItems;
+            }
+            
+        }
     </script>
 </body>
 </html>
