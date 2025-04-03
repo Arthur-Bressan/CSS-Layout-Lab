@@ -1,110 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Flexbox</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <a href="home.html"><svg id="home_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg></a>
-        <h1>CSS Flexbox</h1>
+      <a href="home.html"
+        ><svg
+          id="home_icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 576 512"
+        >
+          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            fill="#ffffff"
+            d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
+          /></svg>
+      </a>
+      <h1>CSS Flexbox</h1>
     </header>
     <main>
-        <section>
-            <h2>O que é o Flexbox?</h2>
-            <div class="info-box">
-                <p>Flexbox é um sistema de layout que ajuda a distribuir os itens dentro de um contêiner de forma eficiente, alinhando, distribuindo e controlando o espaço entre eles.</p>
-                <p>Principais propriedades:</p>
-                <ul>
-                    <li><strong>flex-direction:</strong> Define a direção dos itens dentro do contêiner (linha ou coluna).</li>
-                    <li><strong>justify-content:</strong> Alinha os itens ao longo do eixo principal. (Horizontal)</li>
-                    <li><strong>align-items:</strong> Alinha os itens ao longo do eixo transversal. (Vertical)</li>
-                </ul>
-            </div>
+      <section>
+        <h2>O que é o Flexbox?</h2>
+        <div class="info-box">
+          <p>
+            Flexbox é um sistema de layout que ajuda a distribuir os itens
+            dentro de um contêiner de forma eficiente, alinhando, distribuindo e
+            controlando o espaço entre eles.
+          </p>
+          <p>Principais propriedades:</p>
+          <ul>
+            <li>
+              <strong>flex-direction:</strong> Define a direção dos itens dentro
+              do contêiner (linha ou coluna).
+            </li>
+            <li>
+              <strong>justify-content:</strong> Alinha os itens ao longo do eixo
+              principal. (Horizontal)
+            </li>
+            <li>
+              <strong>align-items:</strong> Alinha os itens ao longo do eixo
+              transversal. (Vertical)
+            </li>
+          </ul>
+        </div>
 
+        <div class="section-examples">
+          <article>
             <h2>Exemplo de CSS flex-direction</h2>
             <div class="flex-container" id="flexContainerDirection">
-                <div class="flex-item">Item 1</div>
-                <div class="flex-item">Item 2</div>
-                <div class="flex-item">Item 3</div>
+              <div class="flex-item">Item 1</div>
+              <div class="flex-item">Item 2</div>
+              <div class="flex-item">Item 3</div>
             </div>
-            
+
             <label for="flexDirection">Flex Direction:</label>
             <select id="flexDirection">
-                <option value="row">Linha (row)</option>
-                <option value="column">Coluna (column)</option>
-                <option value="row-reverse">Linha Invertida (row-reverse)</option>
-                <option value="column-reverse">Coluna Invertida (column-reverse)</option>
+              <option value="row">Linha (row)</option>
+              <option value="column">Coluna (column)</option>
+              <option value="row-reverse">Linha Invertida (row-reverse)</option>
+              <option value="column-reverse">
+                Coluna Invertida (column-reverse)
+              </option>
             </select>
 
             <button onclick="updateFlexboxDirection()">Aplicar</button>
+            <label>
+              <input type="radio" name="flexWrap" value="nowrap" checked />
+              No Wrap
+            </label>
+            <label>
+              <input type="radio" name="flexWrap" value="wrap" />
+              Wrap
+            </label>
+          </article>
 
+          <article>
             <h2>Exemplo de CSS flex justify-content</h2>
             <div class="flex-container-justify" id="flexContainerJustify">
-                <div class="flex-item-justify">Item 1</div>
-                <div class="flex-item-justify">Item 2</div>
-                <div class="flex-item-justify">Item 3</div>
+              <div class="flex-item-justify">Item 1</div>
+              <div class="flex-item-justify">Item 2</div>
+              <div class="flex-item-justify">Item 3</div>
             </div>
-            
+
             <label for="flexJustify">Flex Justify:</label>
             <select id="flexJustify">
-                <option value="center">Centro da Flexbox (center)</option>
-                <option value="flex-start">Começo da Flexbox (flex-start)</option>
-                <option value="flex-end">Fim da Flexbox (flex-end)</option>
-                <option value="space-between">Espaço entre (space-between)</option>
-                <option value="space-around">Espaço ao redor (space-around)</option>
-                <option value="space-evenly">Espaço eventual (space-evenly)</option>
+              <option value="center">Centro da Flexbox (center)</option>
+              <option value="flex-start">Começo da Flexbox (flex-start)</option>
+              <option value="flex-end">Fim da Flexbox (flex-end)</option>
+              <option value="space-between">
+                Espaço entre (space-between)
+              </option>
+              <option value="space-around">
+                Espaço ao redor (space-around)
+              </option>
+              <option value="space-evenly">
+                Espaço eventual (space-evenly)
+              </option>
             </select>
 
             <button onclick="updateFlexboxJustify()">Aplicar</button>
-        </section>
+          </article>
 
-        <!-- Novo exemplo para align-items -->
-        <section>
+          <article>
             <h2>Exemplo de CSS align-items</h2>
             <div class="flex-container-align" id="flexContainerAlign">
-                <div class="flex-item-align">Item 1</div>
-                <div class="flex-item-align">Item 2</div>
-                <div class="flex-item-align">Item 3</div>
+              <div class="flex-item-align">Item 1</div>
+              <div class="flex-item-align">Item 2</div>
+              <div class="flex-item-align">Item 3</div>
             </div>
 
             <label for="alignItems">Escolha o alinhamento:</label>
             <select id="alignItems">
-                <option value="flex-start">Início (flex-start)</option>
-                <option value="flex-end">Fim (flex-end)</option>
-                <option value="center">Centro (center)</option>
-                <option value="baseline">Baseline</option>
+              <option value="flex-start">Início (flex-start)</option>
+              <option value="flex-end">Fim (flex-end)</option>
+              <option value="center">Centro (center)</option>
+              <option value="baseline">Baseline</option>
             </select>
 
             <button onclick="updateAlignItems()">Aplicar</button>
-        </section>
-
+          </article>
+        </div>
+      </section>
     </main>
 
     <script>
-        function updateFlexboxDirection() {
-            let flexDirection = document.getElementById('flexDirection').value;
-            document.getElementById('flexContainerDirection').style.flexDirection = flexDirection;
-        }
+      function updateFlexboxDirection() {
+        let flexDirection = document.getElementById("flexDirection").value;
+        document.getElementById("flexContainerDirection").style.flexDirection =
+          flexDirection;
+      }
 
-        function updateFlexboxJustify() {
-            let flexJustify = document.getElementById('flexJustify').value;
-            let flexContainerJustify = document.getElementById('flexContainerJustify');
-            if (flexJustify.trim() !== "") {
-                flexContainerJustify.style.justifyContent = flexJustify;
-            }
+      function updateFlexboxJustify() {
+        let flexJustify = document.getElementById("flexJustify").value;
+        let flexContainerJustify = document.getElementById(
+          "flexContainerJustify"
+        );
+        if (flexJustify.trim() !== "") {
+          flexContainerJustify.style.justifyContent = flexJustify;
         }
+      }
 
-        function updateAlignItems() {
-            let alignItems = document.getElementById('alignItems').value;
-            let flexContainerAlign = document.getElementById('flexContainerAlign');
-            if (alignItems.trim() !== "") {
-                flexContainerAlign.style.alignItems = alignItems;
-            }
-            
+      function updateAlignItems() {
+        let alignItems = document.getElementById("alignItems").value;
+        let flexContainerAlign = document.getElementById("flexContainerAlign");
+        if (alignItems.trim() !== "") {
+          flexContainerAlign.style.alignItems = alignItems;
         }
+      }
     </script>
-</body>
+  </body>
 </html>

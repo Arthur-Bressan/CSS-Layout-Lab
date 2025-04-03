@@ -62,6 +62,15 @@ section {
     margin: 0 auto; /* Centraliza o conteúdo */
 }
 
+.section-examples {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+    gap: 2em;
+}
+
 footer {
     text-align: center;
     padding: 10px;
@@ -76,7 +85,7 @@ footer {
     gap: 10px;
     background: #1e293b;
     padding: 20px;
-    flex-wrap: wrap;
+    border-radius: 5px;
 }
 
 .flex-item {
@@ -85,7 +94,7 @@ footer {
     text-align: center;
     border-radius: 5px;
     color: white;
-    min-width: 100px;
+    min-width: 20px;
     flex: 1;
 }
 
@@ -96,6 +105,7 @@ footer {
     background: #1e293b;
     padding: 20px;
     gap: 10px;
+    border-radius: 5px;
 }
 
 .flex-item-justify {
@@ -113,11 +123,11 @@ footer {
     flex-direction: row;
     justify-content: center;
     background: #1e293b;
-    padding: 20px;
+    padding: 10px;
     gap: 10px;
-    height: 100px;
+    height: 15vh;
+    border-radius: 5px;
 }
-
 
 .flex-item-align {
     background: #3b82f6;
@@ -140,7 +150,30 @@ input[type="text"] {
     width: 100%;
     margin: 10px 0;
     box-sizing: border-box;
+    transition: all 0.3s ease;;
+}
+
+input[type="radio"] {
+    appearance: none; 
+    -webkit-appearance: none;
+    background-color: #1e293b;
+    border: 2px solid #3b82f6;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
     transition: all 0.3s ease;
+    align-items: center;
+}
+
+input[type="radio"]:checked {
+    background-color: #3b82f6; 
+    border-color: #2563eb; 
+}
+
+input[type="radio"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px #2563eb;
 }
 
 /* Estilo do botão */
