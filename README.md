@@ -27,7 +27,7 @@ Este projeto é um site educacional interativo que demonstra o uso do **CSS Flex
 
 1. Clone o repositório:
    ```
-   git clone https://github.com/seuusuario/css-flexbox-grid-guide.git
+   git clone https://github.com/Arthur-Bressan/projeto-FSI.git
    ```
 2. Acesse a pasta do projeto:
    ```
