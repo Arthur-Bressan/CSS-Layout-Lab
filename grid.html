@@ -27,6 +27,7 @@
                 <p>O <code>fr</code> é uma unidade no CSS Grid que representa uma fração do espaço disponível. Se você tem 1fr, significa que o item ocupa uma fração do espaço restante. Se você tiver <code>1fr 2fr</code>, a primeira coluna ocupará 1 parte do espaço, e a segunda coluna ocupará 2 partes, dividindo o espaço restante de maneira proporcional.</p>
                 <p><strong>Exemplo:</strong> Se você definir <code>grid-template-columns: 1fr 2fr 1fr;</code>, o espaço da grade será dividido em 4 partes iguais. A primeira e a terceira colunas ocuparão 1 parte cada, enquanto a segunda coluna ocupará 2 partes do espaço.</p>
             </div>
+            
             <h2>Exemplo de CSS Grid</h2>
             <div class="grid-container" id="gridContainer">
                 <div class="grid-item">1</div>
@@ -36,7 +37,50 @@
             </div>
             <label for="columns">Grid Columns:</label>
             <input type="text" id="columns" placeholder="Ex: 1fr 2fr" />
-            <button onclick="updateGrid()">Aplicar</button>
+            <button onclick="updateGrid()">Aplicar</button></br>
+
+            <label for="gapColumns">Gap:</label>
+            <input type="text" id="gapColumns" placeholder="Ex: 10px" /> 
+            <button onclick="updateGridGap()">Aplicar Gap</button>
+
+            <h2>Exemplo de CSS Grid Rows</h2>
+            <div class="grid-container" id="gridContainerRows">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+            </div>
+            <label for="rows">Grid Rows:</label>
+            <input type="text" id="rows" placeholder="Ex: 1fr 2fr" />
+            <button onclick="updateGridRows()">Aplicar</button></br>
+
+            <label for="gapRows">Gap:</label>
+            <input type="text" id="gapRows" placeholder="Ex: 10px" />
+            <button onclick="updateGridRowsGap()">Aplicar Gap</button>
+
+            <h2>Exemplo de CSS Grid Completo</h2>
+            <div class="grid-container" id="gridContainerComplete">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+            </div>
+
+            <div class="inputs-examples">
+                <label for="gapComplete">Grid Columns:</label>
+                <label for="gapComplete">Grid Rows:</label>
+                <label for="gapComplete">Gap:</label>
+
+                <input type="text" id="columnsComplete" placeholder="Ex: 1fr 2fr" />
+                <input type="text" id="rowsComplete" placeholder="Ex: 1fr 2fr" />
+                <input type="text" id="gapComplete" placeholder="Ex: 10px" />
+
+                <button onclick="updateGridCompleteColumns()">Aplicar Columns</button>
+                <button onclick="updateGridCompleteRows()">Aplicar Rows</button>
+                <button onclick="updateGridCompleteGap()">Aplicar Gap</button>
+            </div>
         </section>
     </main>
     <script>
@@ -44,6 +88,44 @@
             let columns = document.getElementById('columns').value;
             if (columns.trim() !== "") {
                 document.getElementById('gridContainer').style.gridTemplateColumns = columns;
+            }
+        }
+        function updateGridGap() {
+            let gap = document.getElementById('gapColumns').value;
+            if (gap.trim() !== "") {
+                document.getElementById('gridContainer').style.gap = gap;
+            }
+        }
+        function updateGridRows() {
+            let rows = document.getElementById('rows').value;
+            if (rows.trim() !== "") {
+                document.getElementById('gridContainerRows').style.gridTemplateRows = rows;
+            }
+        }
+        function updateGridRowsGap() {
+            let gap = document.getElementById('gapRows').value;
+            if (gap.trim() !== "") {
+                document.getElementById('gridContainerRows').style.gap = gap;
+            }
+        }
+        function updateGridCompleteColumns() {
+            let columns = document.getElementById('columnsComplete').value;
+            if (columns.trim() !== "") {
+                document.getElementById('gridContainerComplete').style.gridTemplateColumns = columns;
+            }
+        }
+
+        function updateGridCompleteRows() {
+            let rows = document.getElementById('rowsComplete').value;
+            if (rows.trim() !== "") {
+                document.getElementById('gridContainerComplete').style.gridTemplateRows = rows;
+            }
+        }
+
+        function updateGridCompleteGap() {
+            let gap = document.getElementById('gapComplete').value;
+            if (gap.trim() !== "") {
+                document.getElementById('gridContainerComplete').style.gap = gap;
             }
         }
     </script>

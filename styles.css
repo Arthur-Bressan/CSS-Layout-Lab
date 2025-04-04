@@ -197,6 +197,12 @@ button:hover {
     background-color: #2563eb;
 }
 
+.inputs-examples {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
 input[type="text"]:focus {
     outline: none;
     border-color: #2563eb;
