@@ -200,12 +200,9 @@
           
             <button onclick="updateFlexDirection()">Aplicar Direction</button>
             <button onclick="updateJustifyContent()">Aplicar Justify</button>
-            <button onclick="updateAlignItems()">Aplicar Align</button>
+            <button onclick="updateAlignItemsComp()">Aplicar Align</button>
             <button onclick="updateGapFlex()">Aplicar Gap</button>
           </div>
-          
-
-
         </div>
       </section>
 
@@ -252,7 +249,7 @@
           }
         }
 
-        function updateAlignItems() {
+        function updateAlignItemsComp() {
           const align = document.getElementById('alignItemsComp').value;
           if (align.trim() !== "") {
             document.getElementById('flexContainerComplete').style.alignItems = align;
