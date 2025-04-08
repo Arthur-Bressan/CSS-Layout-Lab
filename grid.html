@@ -12,21 +12,82 @@
         <a href="home.html"><svg id="home_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg></a>
         <h1>CSS Grid</h1>
     </header>
+    <nav>
+        <ul>
+            <li><a href="grid.html">CSS Grid</a></li>
+            <li><a href="flexbox.html">CSS Flexbox</a></li>
+        </ul>
+    </nav>
     <main>
         <section>
-            <h2>O que é CSS Grid?</h2>
-            <div class="info-box">
-                <p>CSS Grid é um sistema de layout baseado em grades que permite organizar elementos em colunas e linhas de maneira flexível.</p>
-                <p>Principais propriedades:</p>
-                <ul>
-                    <li><strong>grid-template-columns:</strong> Define as colunas da grade.</li>
-                    <li><strong>grid-template-rows:</strong> Define as linhas da grade.</li>
-                    <li><strong>gap:</strong> Controla o espaçamento entre os elementos.</li>
-                </ul>
-                <p><strong>O que são os <code>fr</code> (frações)?</strong></p>
-                <p>O <code>fr</code> é uma unidade no CSS Grid que representa uma fração do espaço disponível. Se você tem 1fr, significa que o item ocupa uma fração do espaço restante. Se você tiver <code>1fr 2fr</code>, a primeira coluna ocupará 1 parte do espaço, e a segunda coluna ocupará 2 partes, dividindo o espaço restante de maneira proporcional.</p>
-                <p><strong>Exemplo:</strong> Se você definir <code>grid-template-columns: 1fr 2fr 1fr;</code>, o espaço da grade será dividido em 4 partes iguais. A primeira e a terceira colunas ocuparão 1 parte cada, enquanto a segunda coluna ocupará 2 partes do espaço.</p>
-            </div>
+            <h2>O que é o CSS Grid?</h2>
+    <div class="info-box">
+      <p>
+        CSS Grid é um sistema de layout bidimensional que permite criar
+        designs complexos com linhas e colunas, facilitando a organização
+        dos elementos na página.
+      </p>
+      <p>Principais propriedades:</p>
+      <ul>
+        <li>
+          <strong>display: grid;</strong> Define o elemento como um contêiner de grid.
+        </li>
+        <li>
+          <strong>grid-template-columns / grid-template-rows:</strong> Define as colunas e linhas da grade.
+        </li>
+        <li>
+          <strong>gap:</strong> Define o espaçamento entre linhas e colunas.
+        </li>
+        <li>
+          <strong>justify-items / align-items:</strong> Alinha os itens dentro das células da grade.
+        </li>
+        <li>
+          <strong>grid-column / grid-row:</strong> Controla a posição e o "span" dos itens dentro da grade.
+        </li>
+      </ul>
+    </div>
+
+    <h2>Como aplicar no seu projeto?</h2>
+    <p>
+      Para utilizar o CSS Grid em seus projetos, você deve definir a
+      propriedade <code>display: grid;</code> no contêiner pai (Grid Container).
+      A partir daí, você pode usar as propriedades do Grid para criar colunas,
+      linhas e posicionar os itens de forma precisa.
+    </p>
+
+    <h2>Terminologia Essencial</h2>
+    <p>Entenda os principais termos usados no CSS Grid:</p>
+    <ul>
+      <li>
+        <strong>Grid Container:</strong> O elemento pai que utiliza o <code>display: grid</code> para organizar seus filhos.
+      </li>
+      <li>
+        <strong>Grid Item:</strong> Os elementos filhos diretos de um <em>Grid Container</em>.
+      </li>
+      <li>
+        <strong>Grid Line:</strong> As linhas verticais e horizontais que dividem a grade.
+      </li>
+      <li>
+        <strong>Grid Track:</strong> Espaço entre duas grid lines — pode ser uma linha (row) ou coluna.
+      </li>
+      <li>
+        <strong>Grid Cell:</strong> A menor unidade da grade (interseção de uma linha e uma coluna).
+      </li>
+      <li>
+        <strong>Grid Area:</strong> Um espaço que pode abranger múltiplas células, definido com <code>grid-area</code>.
+      </li>
+      <li>
+        <strong>Gap:</strong> Espaçamento entre os itens no grid, definido com <code>gap</code>, <code>row-gap</code> e <code>column-gap</code>.
+      </li>
+      <li>
+        <strong>Justify Items / Align Items:</strong> Propriedades usadas para alinhar os itens dentro das células da grade.
+      </li>
+      <li>
+        <strong><code>fr</code> (Fraction):</strong> A unidade fr representa uma fração do espaço disponível no contêiner de grid.
+
+        Ela é usada para dividir o espaço restante entre as colunas ou linhas de forma proporcional.
+      </li>
+    </ul>
             
             <h2>Exemplo de CSS Grid</h2>
             <div class="grid-container" id="gridContainer">
@@ -83,6 +144,11 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Blog CSS</p>
+    </footer>
+
     <script>
         function updateGrid() {
             let columns = document.getElementById('columns').value;

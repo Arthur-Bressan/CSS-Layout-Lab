@@ -4,6 +4,15 @@ body {
     padding: 0;
     background: linear-gradient(to right, #0f172a, #1e293b);
     color: #ffffff;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+}
+
+html, body, section, header, footer {
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    overflow-y: auto;
 }
 
 header {
@@ -11,7 +20,6 @@ header {
     align-items: center;
     justify-content: center;
     gap: 2em;
-    padding: 20px;
     background: #1e293b;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -44,12 +52,16 @@ nav ul li a {
     font-weight: bold;
 }
 
+li{
+    margin-bottom: 1em;
+}
+
 main {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 10px;
+    gap: 2em;
+    margin-top: 2em;
 }
 
 section {
@@ -57,9 +69,8 @@ section {
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.252);
-    width: 95%;
-    margin: 10px auto;
+    width: 85%;
+    margin: 0 auto;
 }
 
 .section-examples {
@@ -69,6 +80,12 @@ section {
     width: 100%;
     margin: 0 auto;
     gap: 2em;
+}
+
+.inputs-examples-flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
 }
 
 footer {
@@ -129,7 +146,29 @@ footer {
     border-radius: 5px;
 }
 
+.flex-container-align-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #1e293b;
+    padding: 10px;
+    gap: 10px;
+    height: 15vh;
+    border-radius: 5px;
+}
+
 .flex-item-align {
+    background: #3b82f6;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    max-width: 20%;
+    max-height: 20%;
+    flex: 1;
+}
+
+.flex-item-align-content{
     background: #3b82f6;
     padding: 20px;
     text-align: center;
@@ -267,8 +306,22 @@ button:hover {
     main {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .flex-item-justify {
         max-width: 2em;
+    }
+}
+
+@media (max-width: 430px) {
+    .inputs-examples-flex {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .inputs-examples-flex button {
+        background-color: #3b82f6;
+        color: white;
+        width: 90%;
+        text-align: left;
+        padding: 10px 10px;
     }
 }
