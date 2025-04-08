@@ -15,7 +15,6 @@ Este projeto é um site educacional interativo que demonstra o uso do **CSS Flex
   * Visualização da adaptação dos elementos do grid a diferentes configurações.
 * **Design Responsivo:**
   * Garantia de usabilidade em múltiplos tamanhos de tela.
-  * Utilização de um esquema de cores azul escuro com efeitos de gradiente e brilho.
 
 ## Tecnologias Utilizadas
 
