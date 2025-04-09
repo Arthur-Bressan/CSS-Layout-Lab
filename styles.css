@@ -64,6 +64,10 @@ main {
     margin-top: 2em;
 }
 
+img {
+    width: 30vw;
+}
+
 section {
     display: block;
     padding: 20px;
@@ -323,5 +327,9 @@ button:hover {
         width: 90%;
         text-align: left;
         padding: 10px 10px;
+    }
+
+    img {
+        width: 100%;
     }
 }
