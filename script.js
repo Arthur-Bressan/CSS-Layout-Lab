@@ -185,7 +185,6 @@ function open_popup_grid(id) {
 	const clone = template.content.cloneNode(true);
 
 	const codeList = clone.querySelector("#code_list_grid");
-	const title = clone.querySelector("#example_title_grid");
 
 	container.innerHTML = "";
 
@@ -206,7 +205,7 @@ function open_popup_grid(id) {
 		codeList.appendChild(colItem);
 
 		const gapItem = document.createElement("li");
-		if (columns) {
+		if (gap) {
 			gapItem.textContent = `gap: ${gap};`;
 		} else {
 			gapItem.textContent = `gap: 10px;`;
@@ -227,7 +226,7 @@ function open_popup_grid(id) {
 		codeList.appendChild(rowItem);
 
 		const gapItem = document.createElement("li");
-		if (rows) {
+		if (gap) {
 			gapItem.textContent = `gap: ${gap};`;
 		} else {
 			gapItem.textContent = `gap: 10px;`;
@@ -257,7 +256,7 @@ function open_popup_grid(id) {
 		codeList.appendChild(colItem);
 
 		const gapItem = document.createElement("li");
-		if (rows) {
+		if (gap) {
 			gapItem.textContent = `gap: ${gap};`;
 		} else {
 			gapItem.textContent = `gap: 10px;`;
