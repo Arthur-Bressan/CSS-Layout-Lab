@@ -1,203 +1,184 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Grid</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <header>
-        <a href="index.html"><svg id="home_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg></a>
-        <h1>CSS Grid</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="grid.html">CSS Grid</a></li>
-            <li><a href="flexbox.html">CSS Flexbox</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <h2>O que é o CSS Grid?</h2>
-    <div class="info-box">
-      <p>
-        CSS Grid é um sistema de layout bidimensional que permite criar
-        designs complexos com linhas e colunas, facilitando a organização
-        dos elementos na página.
-      </p>
-      <p>Principais propriedades:</p>
-      <ul>
-        <li>
-          <strong>display: grid;</strong> Define o elemento como um contêiner de grid.
-        </li>
-        <li>
-          <strong>grid-template-columns / grid-template-rows:</strong> Define as colunas e linhas da grade.
-        </li>
-        <li>
-          <strong>gap:</strong> Define o espaçamento entre linhas e colunas.
-        </li>
-        <li>
-          <strong>justify-items / align-items:</strong> Alinha os itens dentro das células da grade.
-        </li>
-        <li>
-          <strong>grid-column / grid-row:</strong> Controla a posição e o "span" dos itens dentro da grade.
-        </li>
-      </ul>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Grid</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	</head>
+	<body>
+		<header>
+			<a href="index.html"
+				><svg
+					id="home_icon"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 576 512">
+					<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+					<path
+						fill="#ffffff"
+						d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
+				</svg>
+			</a>
+			<h1>CSS Grid</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="grid.html">CSS Grid</a></li>
+				<li><a href="flexbox.html">CSS Flexbox</a></li>
+			</ul>
+		</nav>
+		<main>
+			<section>
+				<h2>O que é o CSS Grid?</h2>
+				<div class="info-box">
+					<p>
+						CSS Grid é um sistema de layout bidimensional que permite criar
+						designs complexos com linhas e colunas, facilitando a organização
+						dos elementos na página.
+					</p>
+					<p>Principais propriedades:</p>
+					<ul>
+						<li>
+							<strong>display: grid;</strong> Define o elemento como um
+							contêiner de grid.
+						</li>
+						<li>
+							<strong>grid-template-columns / grid-template-rows:</strong>
+							Define as colunas e linhas da grade.
+						</li>
+						<li>
+							<strong>gap:</strong> Define o espaçamento entre linhas e colunas.
+						</li>
+						<li>
+							<strong>justify-items / align-items:</strong> Alinha os itens
+							dentro das células da grade.
+						</li>
+						<li>
+							<strong>grid-column / grid-row:</strong> Controla a posição e o
+							"span" dos itens dentro da grade.
+						</li>
+					</ul>
+				</div>
 
-    <h2>Como aplicar no seu projeto?</h2>
-    <p>
-      Para utilizar o CSS Grid em seus projetos, você deve definir a
-      propriedade <code>display: grid;</code> no contêiner pai (Grid Container).
-      A partir daí, você pode usar as propriedades do Grid para criar colunas,
-      linhas e posicionar os itens de forma precisa.
-    </p>
+				<h2>Como aplicar no seu projeto?</h2>
+				<p>
+					Para utilizar o CSS Grid em seus projetos, você deve definir a
+					propriedade <code>display: grid;</code> no contêiner pai (Grid
+					Container). A partir daí, você pode usar as propriedades do Grid para
+					criar colunas, linhas e posicionar os itens de forma precisa.
+				</p>
 
-    <figure>
-      <img src="imgs/grid_container.png" alt="Código para usar o flexbox" />
-    </figure>
+				<figure>
+					<img src="imgs/grid_container.png" alt="Código para usar o flexbox" />
+				</figure>
 
-    <h2>Terminologia Essencial</h2>
-    <p>Entenda os principais termos usados no CSS Grid:</p>
-    <ul>
-      <li>
-        <strong>Grid Container:</strong> O elemento pai que utiliza o <code>display: grid</code> para organizar seus filhos.
-      </li>
-      <li>
-        <strong>Grid Item:</strong> Os elementos filhos diretos de um <em>Grid Container</em>.
-      </li>
-      <li>
-        <strong>Grid Line:</strong> As linhas verticais e horizontais que dividem a grade.
-      </li>
-      <li>
-        <strong>Grid Track:</strong> Espaço entre duas grid lines — pode ser uma linha (row) ou coluna.
-      </li>
-      <li>
-        <strong>Grid Cell:</strong> A menor unidade da grade (interseção de uma linha e uma coluna).
-      </li>
-      <li>
-        <strong>Grid Area:</strong> Um espaço que pode abranger múltiplas células, definido com <code>grid-area</code>.
-      </li>
-      <li>
-        <strong>Gap:</strong> Espaçamento entre os itens no grid, definido com <code>gap</code>, <code>row-gap</code> e <code>column-gap</code>.
-      </li>
-      <li>
-        <strong>Justify Items / Align Items:</strong> Propriedades usadas para alinhar os itens dentro das células da grade.
-      </li>
-      <li>
-        <strong><code>fr</code> (Fraction):</strong> A unidade fr representa uma fração do espaço disponível no contêiner de grid.
+				<h2>Terminologia Essencial</h2>
+				<p>Entenda os principais termos usados no CSS Grid:</p>
+				<ul>
+					<li>
+						<strong>Grid Container:</strong> O elemento pai que utiliza o
+						<code>display: grid</code> para organizar seus filhos.
+					</li>
+					<li>
+						<strong>Grid Item:</strong> Os elementos filhos diretos de um
+						<em>Grid Container</em>.
+					</li>
+					<li>
+						<strong>Grid Line:</strong> As linhas verticais e horizontais que
+						dividem a grade.
+					</li>
+					<li>
+						<strong>Grid Track:</strong> Espaço entre duas grid lines — pode ser
+						uma linha (row) ou coluna.
+					</li>
+					<li>
+						<strong>Grid Cell:</strong> A menor unidade da grade (interseção de
+						uma linha e uma coluna).
+					</li>
+					<li>
+						<strong>Grid Area:</strong> Um espaço que pode abranger múltiplas
+						células, definido com <code>grid-area</code>.
+					</li>
+					<li>
+						<strong>Gap:</strong> Espaçamento entre os itens no grid, definido
+						com <code>gap</code>, <code>row-gap</code> e
+						<code>column-gap</code>.
+					</li>
+					<li>
+						<strong>Justify Items / Align Items:</strong> Propriedades usadas
+						para alinhar os itens dentro das células da grade.
+					</li>
+					<li>
+						<strong><code>fr</code> (Fraction):</strong> A unidade fr representa
+						uma fração do espaço disponível no contêiner de grid. Ela é usada
+						para dividir o espaço restante entre as colunas ou linhas de forma
+						proporcional.
+					</li>
+				</ul>
 
-        Ela é usada para dividir o espaço restante entre as colunas ou linhas de forma proporcional.
-      </li>
-    </ul>
-            
-            <h2>Exemplo de CSS Grid</h2>
-            <div class="grid-container" id="gridContainer">
-                <div class="grid-item">1</div>
-                <div class="grid-item">2</div>
-                <div class="grid-item">3</div>
-                <div class="grid-item">4</div>
-            </div>
-            <label for="columns">Grid Columns:</label>
-            <input type="text" id="columns" placeholder="Ex: 1fr 2fr" />
-            <button onclick="updateGrid()">Aplicar</button></br>
+				<h2>Exemplo de CSS Grid</h2>
+				<div class="grid-container" id="gridContainer">
+					<div class="grid-item">1</div>
+					<div class="grid-item">2</div>
+					<div class="grid-item">3</div>
+					<div class="grid-item">4</div>
+				</div>
+				<label for="columns">Grid Columns:</label>
+				<input type="text" id="columns" placeholder="Ex: 1fr 2fr" />
+				<button onclick="updateGrid()">Aplicar</button>
 
-            <label for="gapColumns">Gap:</label>
-            <input type="text" id="gapColumns" placeholder="Ex: 10px" /> 
-            <button onclick="updateGridGap()">Aplicar Gap</button>
+				<label for="gapColumns">Gap:</label>
+				<input type="text" id="gapColumns" placeholder="Ex: 10px" />
+				<button onclick="updateGridGap()">Aplicar Gap</button>
 
-            <h2>Exemplo de CSS Grid Rows</h2>
-            <div class="grid-container" id="gridContainerRows">
-                <div class="grid-item">1</div>
-                <div class="grid-item">2</div>
-                <div class="grid-item">3</div>
-                <div class="grid-item">4</div>
-            </div>
-            <label for="rows">Grid Rows:</label>
-            <input type="text" id="rows" placeholder="Ex: 1fr 2fr" />
-            <button onclick="updateGridRows()">Aplicar</button></br>
+				<h2>Exemplo de CSS Grid Rows</h2>
+				<div class="grid-container" id="gridContainerRows">
+					<div class="grid-item">1</div>
+					<div class="grid-item">2</div>
+					<div class="grid-item">3</div>
+					<div class="grid-item">4</div>
+				</div>
+				<label for="rows">Grid Rows:</label>
+				<input type="text" id="rows" placeholder="Ex: 1fr 2fr" />
+				<button onclick="updateGridRows()">Aplicar</button>
 
-            <label for="gapRows">Gap:</label>
-            <input type="text" id="gapRows" placeholder="Ex: 10px" />
-            <button onclick="updateGridRowsGap()">Aplicar Gap</button>
+				<label for="gapRows">Gap:</label>
+				<input type="text" id="gapRows" placeholder="Ex: 10px" />
+				<button onclick="updateGridRowsGap()">Aplicar Gap</button>
 
-            <h2>Exemplo de CSS Grid Completo</h2>
-            <div class="grid-container" id="gridContainerComplete">
-                <div class="grid-item">1</div>
-                <div class="grid-item">2</div>
-                <div class="grid-item">3</div>
-                <div class="grid-item">4</div>
-                <div class="grid-item">5</div>
-                <div class="grid-item">6</div>
-            </div>
+				<h2>Exemplo de CSS Grid Completo</h2>
+				<div class="grid-container" id="gridContainerComplete">
+					<div class="grid-item">1</div>
+					<div class="grid-item">2</div>
+					<div class="grid-item">3</div>
+					<div class="grid-item">4</div>
+					<div class="grid-item">5</div>
+					<div class="grid-item">6</div>
+				</div>
 
-            <div class="inputs-examples">
-                <label for="gapComplete">Grid Columns:</label>
-                <label for="gapComplete">Grid Rows:</label>
-                <label for="gapComplete">Gap:</label>
+				<div class="inputs-examples">
+					<label for="gapComplete">Grid Columns:</label>
+					<label for="gapComplete">Grid Rows:</label>
+					<label for="gapComplete">Gap:</label>
 
-                <input type="text" id="columnsComplete" placeholder="Ex: 1fr 2fr" />
-                <input type="text" id="rowsComplete" placeholder="Ex: 1fr 2fr" />
-                <input type="text" id="gapComplete" placeholder="Ex: 10px" />
+					<input type="text" id="columnsComplete" placeholder="Ex: 1fr 2fr" />
+					<input type="text" id="rowsComplete" placeholder="Ex: 1fr 2fr" />
+					<input type="text" id="gapComplete" placeholder="Ex: 10px" />
 
-                <button onclick="updateGridCompleteColumns()">Aplicar Columns</button>
-                <button onclick="updateGridCompleteRows()">Aplicar Rows</button>
-                <button onclick="updateGridCompleteGap()">Aplicar Gap</button>
-            </div>
-        </section>
-    </main>
+					<button onclick="updateGridCompleteColumns()">Aplicar Columns</button>
+					<button onclick="updateGridCompleteRows()">Aplicar Rows</button>
+					<button onclick="updateGridCompleteGap()">Aplicar Gap</button>
+				</div>
+			</section>
+		</main>
 
-    <footer>
-        <p>&copy; 2025 Blog CSS</p>
-    </footer>
+		<footer>
+			<p>&copy; 2025 Blog CSS</p>
+		</footer>
 
-    <script>
-        function updateGrid() {
-            let columns = document.getElementById('columns').value;
-            if (columns.trim() !== "") {
-                document.getElementById('gridContainer').style.gridTemplateColumns = columns;
-            }
-        }
-        function updateGridGap() {
-            let gap = document.getElementById('gapColumns').value;
-            if (gap.trim() !== "") {
-                document.getElementById('gridContainer').style.gap = gap;
-            }
-        }
-        function updateGridRows() {
-            let rows = document.getElementById('rows').value;
-            if (rows.trim() !== "") {
-                document.getElementById('gridContainerRows').style.gridTemplateRows = rows;
-            }
-        }
-        function updateGridRowsGap() {
-            let gap = document.getElementById('gapRows').value;
-            if (gap.trim() !== "") {
-                document.getElementById('gridContainerRows').style.gap = gap;
-            }
-        }
-        function updateGridCompleteColumns() {
-            let columns = document.getElementById('columnsComplete').value;
-            if (columns.trim() !== "") {
-                document.getElementById('gridContainerComplete').style.gridTemplateColumns = columns;
-            }
-        }
-
-        function updateGridCompleteRows() {
-            let rows = document.getElementById('rowsComplete').value;
-            if (rows.trim() !== "") {
-                document.getElementById('gridContainerComplete').style.gridTemplateRows = rows;
-            }
-        }
-
-        function updateGridCompleteGap() {
-            let gap = document.getElementById('gapComplete').value;
-            if (gap.trim() !== "") {
-                document.getElementById('gridContainerComplete').style.gap = gap;
-            }
-        }
-    </script>
-</body>
+		<script src="script.js"></script>
+	</body>
 </html>

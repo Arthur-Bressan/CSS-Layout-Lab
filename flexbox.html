@@ -1,272 +1,232 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Flexbox</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <a href="index.html"
-        ><svg
-          id="home_icon"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 576 512"
-        >
-          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-          <path
-            fill="#ffffff"
-            d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
-          /></svg>
-      </a>
-      
-      <h1>CSS Flexbox</h1>
-    </header>
-    <nav>
-      <ul>
-          <li><a href="grid.html">CSS Grid</a></li>
-          <li><a href="flexbox.html">CSS Flexbox</a></li>
-      </ul>
-  </nav>
-    <main>
-      <section>
-        <h2>O que é o Flexbox?</h2>
-        <div class="info-box">
-          <p>
-            Flexbox é um sistema de layout que ajuda a distribuir os itens
-            dentro de um contêiner de forma eficiente, alinhando, distribuindo e
-            controlando o espaço entre eles.
-          </p>
-          <p>Principais propriedades:</p>
-          <ul>
-            <li>
-              <strong>flex-direction:</strong> Define a direção dos itens dentro
-              do contêiner (linha ou coluna).
-            </li>
-            <li>
-              <strong>justify-content:</strong> Alinha os itens ao longo do eixo
-              principal. (Horizontal)
-            </li>
-            <li>
-              <strong>align-items:</strong> Alinha os itens ao longo do eixo
-              transversal. (Vertical)
-            </li>
-          </ul>
-        </div>
-        <h2>Como aplicar no seu projeto?</h2>
-        <p>
-          Para utilizar o flexbox em seus projetos você deve definir a
-          propriedade <code>display: flex;</code> no contêiner pai (Flex Container). A partir daí,
-          você pode usar as propriedades do flexbox para alinhar e distribuir os
-          itens filhos.
-        </p>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Flexbox</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
 
-        <figure>
-          <img src="imgs/flex_container.png" alt="Código para usar o flexbox" />
-        </figure>
+	<body>
+		<header>
+			<a href="index.html"
+				><svg
+					id="home_icon"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 576 512">
+					<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+					<path
+						fill="#ffffff"
+						d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
+				</svg>
+			</a>
 
-        <h2>Terminologia Essencial</h2>
-  <p>Entenda os principais termos usados no CSS Flexbox e Grid:</p>
-  <ul>
-    <li>
-      <strong>Flex Container:</strong> O elemento pai que utiliza o display <code>flex</code> para organizar seus filhos.
-    </li>
-    <li>
-      <strong>Flex Item:</strong> Os elementos filhos diretos de um <em>Flex Container</em>.
-    </li>
-    <li>
-      <strong>Eixo Principal (Main Axis):</strong> O eixo ao longo do qual os itens são alinhados. É definido pela propriedade <code>flex-direction</code>.
-    </li>
-    <li>
-      <strong>Eixo Transversal (Cross Axis):</strong> O eixo perpendicular ao eixo principal. É usado para alinhar itens com <code>align-items</code>.
-    </li>
-    <li>
-      <strong>Gap:</strong> Espaçamento entre os itens em um contêiner flex ou grid, definido pelas propriedades <code>gap</code>, <code>row-gap</code> e <code>column-gap</code>.
-    </li>
-    <li>
-      <strong>Justify Content:</strong> Propriedade usada para alinhar os itens ao longo do eixo principal.
-    </li>
-    <li>
-      <strong>Align Items:</strong> Propriedade usada para alinhar os itens ao longo do eixo transversal.
-    </li>
-  </ul>
+			<h1>CSS Flexbox</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="grid.html">CSS Grid</a></li>
+				<li><a href="flexbox.html">CSS Flexbox</a></li>
+			</ul>
+		</nav>
+		<main>
+			<section>
+				<h2>O que é o Flexbox?</h2>
+				<div class="info-box">
+					<p>
+						Flexbox é um sistema de layout que ajuda a distribuir os itens
+						dentro de um contêiner de forma eficiente, alinhando, distribuindo e
+						controlando o espaço entre eles.
+					</p>
+					<p>Principais propriedades:</p>
+					<ul>
+						<li>
+							<strong>flex-direction:</strong> Define a direção dos itens dentro
+							do contêiner (linha ou coluna).
+						</li>
+						<li>
+							<strong>justify-content:</strong> Alinha os itens ao longo do eixo
+							principal. (Horizontal)
+						</li>
+						<li>
+							<strong>align-items:</strong> Alinha os itens ao longo do eixo
+							transversal. (Vertical)
+						</li>
+					</ul>
+				</div>
+				<h2>Como aplicar no seu projeto?</h2>
+				<p>
+					Para utilizar o flexbox em seus projetos você deve definir a
+					propriedade <code>display: flex;</code> no contêiner pai (Flex
+					Container). A partir daí, você pode usar as propriedades do flexbox
+					para alinhar e distribuir os itens filhos.
+				</p>
 
-        <div class="section-examples">
-          <article>
-            <h2>Exemplo de CSS flex-direction</h2>
-            <div class="flex-container" id="flexContainerDirection">
-              <div class="flex-item">Item 1</div>
-              <div class="flex-item">Item 2</div>
-              <div class="flex-item">Item 3</div>
-            </div>
+				<figure>
+					<img src="imgs/flex_container.png" alt="Código para usar o flexbox" />
+				</figure>
 
-            <label for="flexDirection">Flex Direction:</label>
-            <select id="flexDirection">
-              <option value="row">Linha (row)</option>
-              <option value="column">Coluna (column)</option>
-              <option value="row-reverse">Linha Invertida (row-reverse)</option>
-              <option value="column-reverse">
-                Coluna Invertida (column-reverse)
-              </option>
-            </select>
+				<h2>Terminologia Essencial</h2>
+				<p>Entenda os principais termos usados no CSS Flexbox e Grid:</p>
+				<ul>
+					<li>
+						<strong>Flex Container:</strong> O elemento pai que utiliza o
+						display <code>flex</code> para organizar seus filhos.
+					</li>
+					<li>
+						<strong>Flex Item:</strong> Os elementos filhos diretos de um
+						<em>Flex Container</em>.
+					</li>
+					<li>
+						<strong>Eixo Principal (Main Axis):</strong> O eixo ao longo do qual
+						os itens são alinhados. É definido pela propriedade
+						<code>flex-direction</code>.
+					</li>
+					<li>
+						<strong>Eixo Transversal (Cross Axis):</strong> O eixo perpendicular
+						ao eixo principal. É usado para alinhar itens com
+						<code>align-items</code>.
+					</li>
+					<li>
+						<strong>Gap:</strong> Espaçamento entre os itens em um contêiner
+						flex ou grid, definido pelas propriedades <code>gap</code>,
+						<code>row-gap</code> e <code>column-gap</code>.
+					</li>
+					<li>
+						<strong>Justify Content:</strong> Propriedade usada para alinhar os
+						itens ao longo do eixo principal.
+					</li>
+					<li>
+						<strong>Align Items:</strong> Propriedade usada para alinhar os
+						itens ao longo do eixo transversal.
+					</li>
+				</ul>
 
-            <button onclick="updateFlexboxDirection()">Aplicar</button>
-          </article>
+				<div class="section-examples">
+					<article>
+						<h2>Exemplo de CSS flex-direction</h2>
+						<div class="flex-container" id="flexContainerDirection">
+							<div class="flex-item">Item 1</div>
+							<div class="flex-item">Item 2</div>
+							<div class="flex-item">Item 3</div>
+						</div>
 
-          <article>
-            <h2>Exemplo de CSS flex justify-content</h2>
-            <div class="flex-container-justify" id="flexContainerJustify">
-              <div class="flex-item-justify">Item 1</div>
-              <div class="flex-item-justify">Item 2</div>
-              <div class="flex-item-justify">Item 3</div>
-            </div>
+						<label for="flexDirection">Flex Direction:</label>
+						<select id="flexDirection">
+							<option value="row">Linha (row)</option>
+							<option value="column">Coluna (column)</option>
+							<option value="row-reverse">Linha Invertida (row-reverse)</option>
+							<option value="column-reverse">
+								Coluna Invertida (column-reverse)
+							</option>
+						</select>
 
-            <label for="flexJustify">Flex Justify:</label>
-            <select id="flexJustify">
-              <option value="center">Centro da Flexbox (center)</option>
-              <option value="flex-start">Começo da Flexbox (flex-start)</option>
-              <option value="flex-end">Fim da Flexbox (flex-end)</option>
-              <option value="space-between">
-                Espaço entre (space-between)
-              </option>
-              <option value="space-around">
-                Espaço ao redor (space-around)
-              </option>
-              <option value="space-evenly">
-                Espaço eventual (space-evenly)
-              </option>
-            </select>
+						<button onclick="updateFlexboxDirection()">Aplicar</button>
+					</article>
 
-            <button onclick="updateFlexboxJustify()">Aplicar</button>
-          </article>
+					<article>
+						<h2>Exemplo de CSS flex justify-content</h2>
+						<div class="flex-container-justify" id="flexContainerJustify">
+							<div class="flex-item-justify">Item 1</div>
+							<div class="flex-item-justify">Item 2</div>
+							<div class="flex-item-justify">Item 3</div>
+						</div>
 
-          <article>
-            <h2>Exemplo de CSS align-items</h2>
-            <div class="flex-container-align" id="flexContainerAlign">
-              <div class="flex-item-align">Item 1</div>
-              <div class="flex-item-align">Item 2</div>
-              <div class="flex-item-align">Item 3</div>
-            </div>
+						<label for="flexJustify">Flex Justify:</label>
+						<select id="flexJustify">
+							<option value="center">Centro da Flexbox (center)</option>
+							<option value="flex-start">Começo da Flexbox (flex-start)</option>
+							<option value="flex-end">Fim da Flexbox (flex-end)</option>
+							<option value="space-between">
+								Espaço entre (space-between)
+							</option>
+							<option value="space-around">
+								Espaço ao redor (space-around)
+							</option>
+							<option value="space-evenly">
+								Espaço eventual (space-evenly)
+							</option>
+						</select>
 
-            <label for="alignItems">Escolha o alinhamento:</label>
-            <select id="alignItems">
-              <option value="flex-start">Início (flex-start)</option>
-              <option value="flex-end">Fim (flex-end)</option>
-              <option value="center">Centro (center)</option>
-              <option value="baseline">Baseline</option>
-            </select>
+						<button onclick="updateFlexboxJustify()">Aplicar</button>
+					</article>
 
-            <button onclick="updateAlignItems()">Aplicar</button>
-          </article>
+					<article>
+						<h2>Exemplo de CSS align-items</h2>
+						<div class="flex-container-align" id="flexContainerAlign">
+							<div class="flex-item-align">Item 1</div>
+							<div class="flex-item-align">Item 2</div>
+							<div class="flex-item-align">Item 3</div>
+						</div>
 
-          <div class="flex-container" id="flexContainerComplete">
-            <div class="flex-item-justify">1</div>
-            <div class="flex-item-justify">2</div>
-            <div class="flex-item-justify">3</div>
-          </div>
-          
-          <div class="inputs-examples-flex">
-            <label for="flexDirection">Flex Direction:</label>
-            <label for="justifyContent">Justify Content:</label>
-            <label for="alignItems">Align Items:</label>
-            <label for="gapFlex">Gap:</label>
+						<label for="alignItems">Escolha o alinhamento:</label>
+						<select id="alignItems">
+							<option value="flex-start">Início (flex-start)</option>
+							<option value="flex-end">Fim (flex-end)</option>
+							<option value="center">Centro (center)</option>
+							<option value="baseline">Baseline</option>
+						</select>
 
-            <select id="flexDirectionComp">
-              <option value="row">Linha (row)</option>
-              <option value="column">Coluna (column)</option>
-              <option value="row-reverse">Linha Invertida (row-reverse)</option>
-              <option value="column-reverse">
-                Coluna Invertida (column-reverse)
-              </option>
-            </select>
-            <select id="justifyContentComp">
-              <option value="center">Centro da Flexbox (center)</option>
-              <option value="flex-start">Começo da Flexbox (flex-start)</option>
-              <option value="flex-end">Fim da Flexbox (flex-end)</option>
-              <option value="space-between">
-                Espaço entre (space-between)
-              </option>
-              <option value="space-around">
-                Espaço ao redor (space-around)
-              </option>
-              <option value="space-evenly">
-                Espaço eventual (space-evenly)
-              </option>
-            </select>
-            <select id="alignItemsComp">
-              <option value="flex-start">Início (flex-start)</option>
-              <option value="flex-end">Fim (flex-end)</option>
-              <option value="center">Centro (center)</option>
-              <option value="baseline">Baseline</option>
-            </select>
-            <input type="text" id="gapFlexComp" placeholder="Ex: 10px" />
-          
-            <button onclick="updateFlexDirection()">Aplicar Direction</button>
-            <button onclick="updateJustifyContent()">Aplicar Justify</button>
-            <button onclick="updateAlignItemsComp()">Aplicar Align</button>
-            <button onclick="updateGapFlex()">Aplicar Gap</button>
-          </div>
-        </div>
-      </section>
+						<button onclick="updateAlignItems()">Aplicar</button>
+					</article>
 
-      <footer>
-        <p>&copy; 2025 Blog CSS</p>
-    </footer>
+					<div class="flex-container" id="flexContainerComplete">
+						<div class="flex-item-justify">1</div>
+						<div class="flex-item-justify">2</div>
+						<div class="flex-item-justify">3</div>
+					</div>
 
-    <script>
-      function updateFlexboxDirection() {
-        let flexDirection = document.getElementById("flexDirection").value;
-        document.getElementById("flexContainerDirection").style.flexDirection =
-          flexDirection;
-      }
+					<div class="inputs-examples-flex">
+						<label for="flexDirection">Flex Direction:</label>
+						<label for="justifyContent">Justify Content:</label>
+						<label for="alignItems">Align Items:</label>
+						<label for="gapFlex">Gap:</label>
 
-      function updateFlexboxJustify() {
-        let flexJustify = document.getElementById("flexJustify").value;
-        let flexContainerJustify = document.getElementById(
-          "flexContainerJustify"
-        );
-        if (flexJustify.trim() !== "") {
-          flexContainerJustify.style.justifyContent = flexJustify;
-        }
-      }
+						<select id="flexDirectionComp">
+							<option value="row">Linha (row)</option>
+							<option value="column">Coluna (column)</option>
+							<option value="row-reverse">Linha Invertida (row-reverse)</option>
+							<option value="column-reverse">
+								Coluna Invertida (column-reverse)
+							</option>
+						</select>
 
-      function updateAlignItems() {
-        let alignItems = document.getElementById("alignItems").value;
-        let flexContainerAlign = document.getElementById("flexContainerAlign");
-        if (alignItems.trim() !== "") {
-          flexContainerAlign.style.alignItems = alignItems;
-        }
-      }
+						<select id="justifyContentComp">
+							<option value="center">Centro da Flexbox (center)</option>
+							<option value="flex-start">Começo da Flexbox (flex-start)</option>
+							<option value="flex-end">Fim da Flexbox (flex-end)</option>
+							<option value="space-between">
+								Espaço entre (space-between)
+							</option>
+							<option value="space-around">
+								Espaço ao redor (space-around)
+							</option>
+							<option value="space-evenly">
+								Espaço eventual (space-evenly)
+							</option>
+						</select>
 
-      function updateFlexDirection() {
-          const direction = document.getElementById('flexDirectionComp').value;
-          if (direction.trim() !== "") {
-            document.getElementById('flexContainerComplete').style.flexDirection = direction;
-          }
-        }
+						<select id="alignItemsComp">
+							<option value="flex-start">Início (flex-start)</option>
+							<option value="flex-end">Fim (flex-end)</option>
+							<option value="center">Centro (center)</option>
+							<option value="baseline">Baseline</option>
+						</select>
 
-        function updateJustifyContent() {
-          const justify = document.getElementById('justifyContentComp').value;
-          if (justify.trim() !== "") {
-            document.getElementById('flexContainerComplete').style.justifyContent = justify;
-          }
-        }
+						<input type="text" id="gapFlexComp" placeholder="Ex: 10px" />
 
-        function updateAlignItemsComp() {
-          const align = document.getElementById('alignItemsComp').value;
-          if (align.trim() !== "") {
-            document.getElementById('flexContainerComplete').style.alignItems = align;
-          }
-        }
+						<button onclick="updateFlexDirection()">Aplicar Direction</button>
+						<button onclick="updateJustifyContent()">Aplicar Justify</button>
+						<button onclick="updateAlignItemsComp()">Aplicar Align</button>
+						<button onclick="updateGapFlex()">Aplicar Gap</button>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<p>&copy; 2025 Blog CSS</p>
+		</footer>
 
-        function updateGapFlex() {
-          const gap = document.getElementById('gapFlexComp').value;
-          if (gap.trim() !== "") {
-            document.getElementById('flexContainerComplete').style.gap = gap;
-          }
-        }
-
-    </script>
-  </body>
+		<script src="script.js"></script>
+	</body>
 </html>
