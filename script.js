@@ -97,3 +97,80 @@ function updateGridCompleteGap() {
     document.getElementById("gridContainerComplete").style.gap = gap;
   }
 }
+
+function close_popup() {
+  const popup = document.getElementById("popup_code_inner");
+  if (popup) {
+    popup.style.opacity = "0";
+    const container = document.getElementById("popup_code_container");
+    container.innerHTML = ""; 
+  }
+}
+
+function open_popup(popupType) {
+  const container = document.getElementById("popup_code_container");
+  container.innerHTML = "";
+
+  const template = document.getElementById("popup_template");
+  const clone = template.content.cloneNode(true);
+
+  const codeList = clone.getElementById("code_list");
+
+  const displayItem = document.createElement("li");
+  displayItem.textContent = "display: flex;";
+  codeList.appendChild(displayItem);
+
+  if (popupType === "flexContainerJustify") {
+    const justify = document.getElementById("flexJustify").value;
+    const justifyItem = document.createElement("li");
+    justifyItem.textContent = `justify-content: ${justify};`;
+    codeList.appendChild(justifyItem);
+  }
+
+  if (popupType === "flexContainerDirection") {
+    const direction = document.getElementById("flexDirection").value;
+    const directionItem = document.createElement("li");
+    directionItem.textContent = `flex-direction: ${direction};`;
+    codeList.appendChild(directionItem);
+  }
+
+  if (popupType === "flexContainerAlign") {
+    let alignItems = document.getElementById("alignItems").value;
+    const directionItem = document.createElement("li");
+    directionItem.textContent = `align-itens: ${alignItems};`;
+    codeList.appendChild(directionItem);
+  }
+
+  if (popupType === "flexContainerComplete") {
+    const direction = document.getElementById("flexDirectionComp").value;
+    const justify = document.getElementById("justifyContentComp").value;
+    const align = document.getElementById("alignItemsComp").value;
+    const gap = document.getElementById("gapFlexComp").value;
+
+    const directionItem = document.createElement("li");
+    const justifyItem = document.createElement("li");
+    const alignItem = document.createElement("li");
+    const gapItem = document.createElement("li");
+
+    alignItem.textContent = `align-itens: ${align};`;
+    directionItem.textContent = `flex-direction: ${direction};`;
+    justifyItem.textContent = `justify-content: ${justify};`;
+    if (gap){
+      gapItem.textContent = `gap: ${gap};`;
+    }
+    else {
+      gapItem.textContent = `gap: 10px;`;
+    }
+
+    codeList.appendChild(directionItem);
+    codeList.appendChild(alignItem);
+    codeList.appendChild(justifyItem);
+    codeList.appendChild(gapItem);
+  }
+
+  container.appendChild(clone);
+
+  const popupInner = document.getElementById("popup_code_inner");
+  popupInner.style.display = "block";
+  popupInner.style.opacity = "1";
+}

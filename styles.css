@@ -86,6 +86,59 @@ section {
     gap: 2em;
 }
 
+article button:not(.article_header button) {
+    width: 100%;
+}
+
+.article_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.article_header button{
+    height: 2.5em;
+    border-radius: 10px;
+}
+
+.popup_code {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1e293b;
+    padding: 20px;
+    padding-top: 0;
+    border-radius: 10px;
+    box-shadow: 10px 10px 200px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.popup_code ul {
+    list-style: none;
+    padding-left: 30px;
+}
+
+.popup_code .close {
+    scale: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.popup_code .close:hover {
+    color: #c1c1c1;
+    scale: 2.4;
+}
+
+.popup_code_content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
 .inputs-examples-flex {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -131,12 +184,18 @@ footer figure {
 
 .flex-item {
     background: #3b82f6;
-    padding: 20px;
+    color: #fff;
     text-align: center;
+    padding: 20px;
     border-radius: 5px;
-    color: white;
-    width: 20px;
     flex: 1;
+}
+
+code {
+    background: #1e293b;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .flex-container-justify {
@@ -310,21 +369,6 @@ select:focus {
     background-color: #1f2937;
 }
 
-/* Estilo do botão */
-button {
-    background-color: #3b82f6;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #2563eb;
-}
 
 @media (max-width: 768px) {
     main {
@@ -351,5 +395,9 @@ button:hover {
 
     img {
         width: 100%;
+    }
+
+    .popup_code {
+        width: 80%;
     }
 }
