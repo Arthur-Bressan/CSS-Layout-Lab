@@ -99,84 +99,86 @@ function updateGridCompleteGap() {
 }
 
 function close_popup() {
-	const popup = document.getElementById("popup_code_inner");
-	if (popup) {
-		popup.style.opacity = "0";
-		const container = document.getElementById("popup_code_container");
-		container.innerHTML = "";
-	}
+	document.getElementById("popup_code_container").innerHTML = "";
+	const overlay = document.getElementById("overlay_flex");
+	if (overlay) overlay.style.display = "none";
 }
 
 function open_popup(popupType) {
-  const container = document.getElementById("popup_code_container");
-  container.innerHTML = "";
+	const container = document.getElementById("popup_code_container");
+	container.innerHTML = "";
 
-  const template = document.getElementById("popup_template");
-  const clone = template.content.cloneNode(true);
+	const template = document.getElementById("popup_template");
+	const clone = template.content.cloneNode(true);
+	const codeList = clone.getElementById("code_list");
 
-  const codeList = clone.getElementById("code_list");
+	const displayItem = document.createElement("li");
+	displayItem.textContent = "display: flex;";
+	codeList.appendChild(displayItem);
 
-  const displayItem = document.createElement("li");
-  displayItem.textContent = "display: flex;";
-  codeList.appendChild(displayItem);
+	if (popupType === "flexContainerJustify") {
+		const justify = document.getElementById("flexJustify").value;
+		const justifyItem = document.createElement("li");
+		justifyItem.textContent = `justify-content: ${justify};`;
+		codeList.appendChild(justifyItem);
+	}
 
-  if (popupType === "flexContainerJustify") {
-    const justify = document.getElementById("flexJustify").value;
-    const justifyItem = document.createElement("li");
-    justifyItem.textContent = `justify-content: ${justify};`;
-    codeList.appendChild(justifyItem);
-  }
+	if (popupType === "flexContainerDirection") {
+		const direction = document.getElementById("flexDirection").value;
+		const directionItem = document.createElement("li");
+		directionItem.textContent = `flex-direction: ${direction};`;
+		codeList.appendChild(directionItem);
+	}
 
-  if (popupType === "flexContainerDirection") {
-    const direction = document.getElementById("flexDirection").value;
-    const directionItem = document.createElement("li");
-    directionItem.textContent = `flex-direction: ${direction};`;
-    codeList.appendChild(directionItem);
-  }
+	if (popupType === "flexContainerAlign") {
+		let alignItems = document.getElementById("alignItems").value;
+		const alignItem = document.createElement("li");
+		alignItem.textContent = `align-items: ${alignItems};`;
+		codeList.appendChild(alignItem);
+	}
 
-  if (popupType === "flexContainerAlign") {
-    let alignItems = document.getElementById("alignItems").value;
-    const alignItem = document.createElement("li");
-    alignItem.textContent = `align-items: ${alignItems};`;
-    codeList.appendChild(alignItem);
-  }
+	if (popupType === "flexContainerComplete") {
+		const direction = document.getElementById("flexDirectionComp").value;
+		const justify = document.getElementById("justifyContentComp").value;
+		const align = document.getElementById("alignItemsComp").value;
+		const gap = document.getElementById("gapFlexComp").value;
 
-  if (popupType === "flexContainerComplete") {
-    const direction = document.getElementById("flexDirectionComp").value;
-    const justify = document.getElementById("justifyContentComp").value;
-    const align = document.getElementById("alignItemsComp").value;
-    const gap = document.getElementById("gapFlexComp").value;
+		const directionItem = document.createElement("li");
+		const justifyItem = document.createElement("li");
+		const alignItem = document.createElement("li");
+		const gapItem = document.createElement("li");
 
-    const directionItem = document.createElement("li");
-    const justifyItem = document.createElement("li");
-    const alignItem = document.createElement("li");
-    const gapItem = document.createElement("li");
+		directionItem.textContent = `flex-direction: ${direction};`;
+		justifyItem.textContent = `justify-content: ${justify};`;
+		alignItem.textContent = `align-items: ${align};`;
+		gapItem.textContent = `gap: ${gap || "10px"};`;
 
-    directionItem.textContent = `flex-direction: ${direction};`;
-    justifyItem.textContent = `justify-content: ${justify};`;
-    alignItem.textContent = `align-items: ${align};`;
-    gapItem.textContent = `gap: ${gap || "10px"};`;
+		codeList.appendChild(directionItem);
+		codeList.appendChild(alignItem);
+		codeList.appendChild(justifyItem);
+		codeList.appendChild(gapItem);
+	}
 
-    codeList.appendChild(directionItem);
-    codeList.appendChild(alignItem);
-    codeList.appendChild(justifyItem);
-    codeList.appendChild(gapItem);
-  }
+	let overlay = document.getElementById("overlay_flex");
+	if (!overlay) {
+		overlay = document.createElement("div");
+		overlay.id = "overlay_flex";
+		overlay.className = "overlay";
+		document.body.appendChild(overlay);
+	}
+	overlay.style.display = "block";
 
-  container.appendChild(clone);
+	container.appendChild(clone);
 
-  const popupInner = document.getElementById("popup_code_inner");
-  popupInner.style.display = "block";
-  popupInner.style.opacity = "1";
+	const popupInner = document.getElementById("popup_code_inner");
+	popupInner.style.display = "block";
+	popupInner.style.opacity = "1";
 }
 
 function close_popup_grid() {
 	document.getElementById("popup_code_container_grid").innerHTML = "";
-
 	const overlay = document.getElementById("overlay_grid");
 	if (overlay) overlay.style.display = "none";
-
-	document.body.style.overflow = ""; // libera o scroll
 }
 
 function open_popup_grid(id) {
