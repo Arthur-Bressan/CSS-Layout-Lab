@@ -174,3 +174,116 @@ function open_popup(popupType) {
   popupInner.style.display = "block";
   popupInner.style.opacity = "1";
 }
+
+
+function close_popup_grid() {
+  const popup = document.getElementById("popup_code_inner_grid");
+  if (popup) {
+    popup.style.opacity = "0";
+    const container = document.getElementById("popup_code_content");
+    container.innerHTML = ""; 
+  }
+}
+
+function open_popup_grid(id) {
+  const container = document.getElementById("popup_code_container_grid");
+  const template = document.getElementById("popup_template_grid");
+  const clone = template.content.cloneNode(true);
+
+  const codeList = clone.querySelector("#code_list_grid");
+  const title = clone.querySelector("#example_title_grid");
+
+  container.innerHTML = "";
+
+  const displayItem = document.createElement("li");
+  displayItem.textContent = "display: grid;";
+  codeList.appendChild(displayItem);
+
+  if (id === "gridContainer") {
+    const columns = document.getElementById("columns").value;
+    const gap = document.getElementById("gapColumns").value;
+
+    const colItem = document.createElement("li");
+    if (columns) {
+      colItem.textContent = `grid-template-columns: ${columns};`;
+    }
+    else{
+      colItem.textContent = `grid-template-columns: 1fr 1fr;`;
+    }
+    codeList.appendChild(colItem);
+
+    const gapItem = document.createElement("li");
+    if (columns) {
+      gapItem.textContent = `gap: ${gap};`;
+    }
+    else{
+      gapItem.textContent = `gap: 10px;`;
+    }
+    codeList.appendChild(gapItem);
+  }
+
+  if (id === "gridContainerRows") {
+    const rows = document.getElementById("rows").value;
+    const gap = document.getElementById("gapColumns").value;
+
+    const rowItem = document.createElement("li");
+    if (rows) {
+      rowItem.textContent = `grid-template-rows: ${rows};`;
+    }
+    else{
+      rowItem.textContent = `grid-template-rows: 1fr 1fr;`;
+    }
+    codeList.appendChild(rowItem);
+
+    const gapItem = document.createElement("li");
+    if (rows) {
+      gapItem.textContent = `gap: ${gap};`;
+    }
+    else{
+      gapItem.textContent = `gap: 10px;`;
+    }
+    codeList.appendChild(gapItem);
+  }
+
+  if (id === "gridContainerComplete") {
+    const rows = document.getElementById("rows").value;
+    const gap = document.getElementById("gapColumns").value;
+    const columns = document.getElementById("columns").value;
+
+    const rowItem = document.createElement("li");
+    if (rows) {
+      rowItem.textContent = `grid-template-rows: ${rows};`;
+    }
+    else{
+      rowItem.textContent = `grid-template-rows: 1fr 1fr 1fr;`;
+    }
+    codeList.appendChild(rowItem);
+
+    const colItem = document.createElement("li");
+    if (columns) {
+      colItem.textContent = `grid-template-columns: ${columns};`;
+    }
+    else{
+      colItem.textContent = `grid-template-columns: 1fr 1fr;`;
+    }
+    codeList.appendChild(colItem);
+
+    const gapItem = document.createElement("li");
+    if (rows) {
+      gapItem.textContent = `gap: ${gap};`;
+    }
+    else{
+      gapItem.textContent = `gap: 10px;`;
+    }
+    codeList.appendChild(gapItem);
+
+  }
+
+
+
+  container.appendChild(clone);
+
+  const popupInner = container.querySelector("#popup_code_inner_grid");
+  popupInner.style.display = "block";
+  popupInner.style.opacity = "1";
+}
