@@ -105,12 +105,9 @@ function close_popup() {
 }
 
 function open_popup(popupType) {
-	const container = document.getElementById("popup_code_container");
-	container.innerHTML = "";
-
-	const template = document.getElementById("popup_template");
-	const clone = template.content.cloneNode(true);
-	const codeList = clone.getElementById("code_list");
+	// Prepara o conteúdo do modal Bootstrap
+	const codeList = document.getElementById("code_list");
+	codeList.innerHTML = "";
 
 	const displayItem = document.createElement("li");
 	displayItem.textContent = "display: flex;";
@@ -159,20 +156,9 @@ function open_popup(popupType) {
 		codeList.appendChild(gapItem);
 	}
 
-	let overlay = document.getElementById("overlay_flex");
-	if (!overlay) {
-		overlay = document.createElement("div");
-		overlay.id = "overlay_flex";
-		overlay.className = "overlay";
-		document.body.appendChild(overlay);
-	}
-	overlay.style.display = "block";
-
-	container.appendChild(clone);
-
-	const popupInner = document.getElementById("popup_code_inner");
-	popupInner.style.display = "block";
-	popupInner.style.opacity = "1";
+	// Abre o modal Bootstrap via JS
+	const modalBtn = document.getElementById("openBootstrapModalBtn");
+	modalBtn.click();
 }
 
 function close_popup_grid() {

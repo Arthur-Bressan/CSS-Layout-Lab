@@ -12,6 +12,40 @@
 </head>
 
 <body>
+	<!-- Botão para abrir o modal (invisível, será disparado via JS) -->
+	<button id="openBootstrapModalBtn" type="button" class="btn btn-primary d-none" data-bs-toggle="modal"
+		data-bs-target="#flexCodeModal">
+		Abrir Modal
+	</button>
+
+	<!-- Modal Bootstrap 5 para exibir código (tema escuro customizado) -->
+	<div class="modal fade" id="flexCodeModal" tabindex="-1" aria-labelledby="flexCodeModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content bg-dark text-white"
+				style="background-color: #1e293b !important; color: #fff !important;">
+				<div class="modal-header border-0" style="background-color: #1e293b;">
+					<h5 class="modal-title" id="flexCodeModalLabel">Código para melhor visualização</h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar">
+					</button>
+				</div>
+				<div class="modal-body">
+					<label id="example_title"></label>
+					<div class="popup_code_content">
+						<code class="language-css">
+							<p>.flex-container {</p>
+							<ul class="code-list" id="code_list"></ul>
+							<p>}</p>
+						</code>
+					</div>
+					<p>Este código é atualizado conforme você utiliza o exemplo interativo.</p>
+				</div>
+				<div class="modal-footer border-0" style="background-color: #1e293b;">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="index.html">CSS Layout Lab</a>
@@ -23,10 +57,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
+						<a class="nav-link active" aria-current="page" href="index.html">Página inicial</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -70,10 +101,6 @@
 						</ul>
 					</li>
 				</ul>
-				<form class="d-flex" role="search">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-					<button class="btn btn-outline-success" type="submit">Search</button>
-				</form>
 			</div>
 		</div>
 	</nav>
@@ -318,6 +345,55 @@
 		crossorigin="anonymous"></script>
 
 	<script src="script.js"></script>
+	<script>
+// Função para abrir o modal e popular com código de grid
+function open_popup_grid(id) {
+  const codeList = document.getElementById("code_list");
+  codeList.innerHTML = "";
+
+  const displayItem = document.createElement("li");
+  displayItem.textContent = "display: grid;";
+  codeList.appendChild(displayItem);
+
+  if (id === "gridContainer") {
+    const columns = document.getElementById("columns").value;
+    const gap = document.getElementById("gapColumns").value;
+    const colItem = document.createElement("li");
+    colItem.textContent = `grid-template-columns: ${columns || '1fr 1fr'};`;
+    codeList.appendChild(colItem);
+    const gapItem = document.createElement("li");
+    gapItem.textContent = `gap: ${gap || '10px'};`;
+    codeList.appendChild(gapItem);
+  }
+  if (id === "gridContainerRows") {
+    const rows = document.getElementById("rows").value;
+    const gap = document.getElementById("gapRows").value;
+    const rowItem = document.createElement("li");
+    rowItem.textContent = `grid-template-rows: ${rows || '1fr 1fr'};`;
+    codeList.appendChild(rowItem);
+    const gapItem = document.createElement("li");
+    gapItem.textContent = `gap: ${gap || '10px'};`;
+    codeList.appendChild(gapItem);
+  }
+  if (id === "gridContainerComplete") {
+    const columns = document.getElementById("columnsComplete").value;
+    const rows = document.getElementById("rowsComplete").value;
+    const gap = document.getElementById("gapComplete").value;
+    const colItem = document.createElement("li");
+    colItem.textContent = `grid-template-columns: ${columns || '1fr 1fr'};`;
+    codeList.appendChild(colItem);
+    const rowItem = document.createElement("li");
+    rowItem.textContent = `grid-template-rows: ${rows || '1fr 1fr 1fr'};`;
+    codeList.appendChild(rowItem);
+    const gapItem = document.createElement("li");
+    gapItem.textContent = `gap: ${gap || '10px'};`;
+    codeList.appendChild(gapItem);
+  }
+  // Abre o modal Bootstrap via JS
+  const modalBtn = document.getElementById("openBootstrapModalBtn");
+  modalBtn.click();
+}
+</script>
 </body>
 
 </html>

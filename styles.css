@@ -20,6 +20,15 @@ footer {
 	overflow-y: auto;
 }
 
+#flexCodeModal {
+	margin: auto;
+	margin-top: 5%;
+}
+
+#flexCodeModal .modal-body code {
+    color: white
+}
+
 header {
 	display: flex;
 	align-items: center;
@@ -44,7 +53,6 @@ nav ul {
 	justify-content: center;
 	list-style: none;
 	padding: 10px;
-	background: #334155;
 }
 
 nav ul li {
