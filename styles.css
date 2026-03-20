@@ -6,12 +6,11 @@ body {
 	background: linear-gradient(to right, #0f172a, #1e293b);
 	color: #ffffff;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
 	background-size: cover;
 	width: 100%;
 	display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
 }
 
@@ -20,7 +19,7 @@ body,
 section,
 header,
 footer {
-	overflow-x: hidden; /* Disable horizontal scrolling */
+	overflow-x: hidden;
 	overflow-y: auto;
 }
 
@@ -175,7 +174,8 @@ footer {
 	text-align: center;
 	padding: 10px;
 	background: #1e293b;
-	margin-top: 3em;
+	margin-top: auto;
+	justify-self: flex-end;
 }
 
 footer figure {
